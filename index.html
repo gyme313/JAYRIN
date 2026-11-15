@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jayrin &amp; Co Limited | Paints &amp; Gypsum Center - Kiambu</title>
+  <style>
+    :root {
+      --teal: #0e6f7c;
+      --teal-dark: #094d56;
+      --amber: #e59a1a;
+      --terracotta: #b83a24;
+      --cream: #f6f1e7;
+      --dark: #1d2428;
+      --muted: #5a656b;
+      --white: #ffffff;
+      --whatsapp: #25D366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--dark);
+      background-color: var(--cream);
+      line-height: 1.6;
+    }
+
+    /* Top Info Bar */
+    .top-bar {
+      background: var(--teal-dark);
+      color: var(--white);
+      font-size: 0.85rem;
+      padding: 8px 5%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .top-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Navigation */
+    header {
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 900;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, var(--teal), var(--amber), var(--terracotta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--teal-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--terracotta);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 22px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+      transition: transform 0.15s, opacity 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: var(--white);
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: var(--white);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(14,111,124,0.95) 0%, rgba(9,77,86,0.92) 60%, rgba(184,58,36,0.88) 100%);
+      color: var(--white);
+      padding: 72px 5%;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--amber);
+      color: var(--dark);
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      line-height: 1.18;
+      margin-bottom: 14px;
+    }
+
+    .hero-tagline {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #ffe2a8;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 1.02rem;
+      color: #eef5f6;
+      margin-bottom: 28px;
+      max-width: 600px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      background: var(--white);
+      color: var(--dark);
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.2);
+      border-top: 6px solid var(--amber);
+    }
+
+    .hero-card h3 {
+      color: var(--teal-dark);
+      margin-bottom: 14px;
+      font-size: 1.25rem;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.95rem;
+    }
+
+    .info-list li strong {
+      color: var(--terracotta);
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    /* Sections General */
+    section {
+      padding: 68px 5%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 44px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      color: var(--teal-dark);
+      margin-bottom: 10px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+    }
+
+    /* Services Grid */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      border-bottom: 4px solid var(--teal);
+      transition: transform 0.2s;
+    }
+
+    .card:nth-child(2) {
+      border-bottom-color: var(--amber);
+    }
+
+    .card:nth-child(3) {
+      border-bottom-color: var(--terracotta);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+      color: var(--teal);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    .card ul {
+      margin-top: 12px;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .card ul li {
+      margin-bottom: 6px;
+    }
+
+    /* Brands Section */
+    .brands-section {
+      background: var(--white);
+    }
+
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .brand-card {
+      border: 1px solid #e5e9ec;
+      border-radius: 10px;
+      padding: 24px 20px;
+      text-align: center;
+      background: var(--cream);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .brand-card:hover {
+      border-color: var(--teal);
+      transform: translateY(-3px);
+    }
+
+    .brand-swatch {
+      height: 10px;
+      width: 60px;
+      margin: 0 auto 14px;
+      border-radius: 5px;
+    }
+
+    .brand-card h3 {
+      font-size: 1.25rem;
+      color: var(--teal-dark);
+      margin-bottom: 6px;
+    }
+
+    .brand-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Estimator Section */
+    .estimator-box {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 36px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+
+    .form-group select,
+    .form-group input {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #cfd8dc;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    .estimate-result {
+      background: var(--cream);
+      padding: 26px;
+      border-radius: 10px;
+      border-left: 5px solid var(--teal);
+    }
+
+    .estimate-result h4 {
+      color: var(--teal-dark);
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .estimate-figures {
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+      color: var(--dark);
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .contact-card {
+      background: var(--white);
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    }
+
+    .contact-card h3 {
+      color: var(--teal);
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .contact-card p, .contact-card a {
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 0.96rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .contact-card a:hover {
+      color: var(--terracotta);
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: #cfd8dc;
+      padding: 40px 5% 24px;
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid #333e44;
+      padding-bottom: 24px;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand h4 {
+      color: var(--white);
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #90a4ae;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--whatsapp);
+      color: var(--white);
+      padding: 14px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
+      transition: transform 0.2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.04);
+    }
+
+    @media (max-width: 820px) {
+      .hero-inner, .estimator-box {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Info Bar -->
+  <div class="top-bar">
+    <span>Murutani Building, Biashara Street, Kiambu Town</span>
+    <span>Open: Mon – Sat, 8:00 AM – 6:00 PM</span>
+    <span>Call / WhatsApp: +254 751 827 542 | +254 736 299 090</span>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-title">JAYRIN &amp; CO LIMITED</span>
+        <span class="brand-sub">Paints &amp; Gypsum Center</span>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#brands">Paint Brands</a>
+        <a href="#estimator">Material Estimator</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/254751827542?text=Hello%20Jayrin%20%26%20Co%20Limited%2C%20I%20would%20like%20to%20inquire%20about%20paints%20and%20gypsum%20boards." target="_blank" rel="noopener" class="btn btn-whatsapp">Chat on WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="badge">Kiambu County's Trusted Finishing Partner</span>
+        <h1>Quality Paints, Gypsum Boards &amp; Expert Finishes</h1>
+        <div class="hero-tagline">Vibrant Color, Structured Quality, Perfect Spaces.</div>
+        <p>From supplying top-tier architectural paints and gypsum ceiling boards to executing clean interior and exterior finishes for new constructions and renovations across Kiambu County.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/254751827542?text=Hello%20Jayrin%20%26%20Co%20Limited%2C%20I%20would%20like%20a%20quote%20for%20my%20project." target="_blank" rel="noopener" class="btn btn-whatsapp">Order / Quote on WhatsApp</a>
+          <a href="#estimator" class="btn btn-primary">Estimate Materials</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Visit Our Kiambu Shop</h3>
+        <ul class="info-list">
+          <li>
+            <strong>Physical Location</strong>
+            Murutani Building, Biashara Street, Kiambu Town
+          </li>
+          <li>
+            <strong>Opening Hours</strong>
+            Monday – Saturday: 8:00 AM – 6:00 PM
+          </li>
+          <li>
+            <strong>WhatsApp &amp; Direct Lines</strong>
+            +254 751 827 542 (WhatsApp Primary)<br />
+            +254 736 299 090
+          </li>
+          <li>
+            <strong>Postal &amp; Email</strong>
+            P.O. Box 1378 – 00900 Kiambu<br />
+            jayrincompany@gmail.com
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Core Products &amp; Services</h2>
+        <p>Complete supply and professional application solutions for residential homes, commercial buildings, and renovation projects.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">01</div>
+          <h3>Paint Supply &amp; Color Matching</h3>
+          <p>Genuine interior and exterior paints, primers, undercoats, wood varnishes, and waterproofing solutions in a full spectrum of shades.</p>
+          <ul>
+            <li>Silk vinyl, matt emulsion &amp; weatherguard</li>
+            <li>Undercoats, primers &amp; wall fillers</li>
+            <li>Gloss, enamel, roof &amp; floor paints</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">02</div>
+          <h3>Gypsum Boards &amp; Accessories</h3>
+          <p>Durable standard, moisture-resistant, and fire-rated gypsum boards alongside all structural framing and jointing materials.</p>
+          <ul>
+            <li>Standard &amp; moisture-resistant boards</li>
+            <li>Studs, channels, cornices &amp; cove profiles</li>
+            <li>Gypsum screws, fiber tape &amp; joint compound</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">03</div>
+          <h3>Interior &amp; Exterior Finishes</h3>
+          <p>Skilled workmanship for new builds and property renovations across Kiambu Town, Ruaka, Ruiru, Thika, and surrounding areas.</p>
+          <ul>
+            <li>Modern gypsum ceiling design &amp; installation</li>
+            <li>Skimming, sanding &amp; decorative wall textures</li>
+            <li>Full interior &amp; exterior repainting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paint Brands Section -->
+  <section id="brands" class="brands-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Authorized Paint Brands We Stock</h2>
+        <p>We partner with trusted Kenyan and regional manufacturers to guarantee lasting color retention and weather protection.</p>
+      </div>
+
+      <div class="brands-grid">
+        <div class="brand-card">
+          <div class="brand-swatch" style="background: #0e6f7c;"></div>
+          <h3>Crown Paints</h3>
+          <p>Covermatt, Silk Vinyl, Permacote, Ruff N Tuff, and specialized protective coatings.</p>
+        </div>
+
+        <div class="brand-card">
+          <div class="brand-swatch" style="background: #e59a1a;"></div>
+          <h3>Basco Paints (Duracoat)</h3>
+          <p>Duracoat Vinyl Matt, Silk, Weatherguard, and decorative textured finishes.</p>
+        </div>
+
+        <div class="brand-card">
+          <div class="brand-swatch" style="background: #b83a24;"></div>
+          <h3>Plascon</h3>
+          <p>High-opacity interior emulsions, weather-resistant exterior paints, and primers.</p>
+        </div>
+
+        <div class="brand-card">
+          <div class="brand-swatch" style="background: #2b7a4b;"></div>
+          <h3>Hermosa Paints</h3>
+          <p>Reliable, cost-effective emulsions, undercoats, and gloss finishes for every budget.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Material Estimator -->
+  <section id="estimator">
+    <div class="container">
+      <div class="section-header">
+        <h2>Quick Project Material Estimator</h2>
+        <p>Estimate the paint or gypsum boards needed for your room or building, then send the summary directly to our team on WhatsApp.</p>
+      </div>
+
+      <div class="estimator-box">
+        <div>
+          <div class="form-group">
+            <label for="projectType">Project Scope</label>
+            <select id="projectType" onchange="calculateEstimate()">
+              <option value="paint">Interior / Exterior Painting</option>
+              <option value="gypsum">Gypsum Ceiling Installation</option>
+              <option value="both">Full Package (Gypsum + Painting)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="areaSize">Approximate Area (Square Meters - m&sup2;)</label>
+            <input type="number" id="areaSize" value="50" min="5" max="10000" oninput="calculateEstimate()" />
+          </div>
+
+          <div class="form-group">
+            <label for="preferredBrand">Preferred Paint Brand</label>
+            <select id="preferredBrand" onchange="calculateEstimate()">
+              <option value="Crown Paints">Crown Paints</option>
+              <option value="Basco / Duracoat">Basco / Duracoat</option>
+              <option value="Plascon">Plascon</option>
+              <option value="Hermosa Paints">Hermosa Paints</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="estimate-result">
+          <h4>Estimated Material Summary</h4>
+          <div class="estimate-figures" id="estimateOutput">
+            For <strong>50 m&sup2;</strong> (2 coats): approx. <strong>10 Litres</strong> of <strong>Crown Paints</strong> topcoat + <strong>5 Litres</strong> undercoat.
+          </div>
+          <a id="whatsappQuoteBtn" href="https://wa.me/254751827542" target="_blank" rel="noopener" class="btn btn-whatsapp">Send Estimate via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" style="background: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contact &amp; Location</h2>
+        <p>Visit our store in Kiambu Town or reach out by phone, WhatsApp, or email for site visits and deliveries.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Shop Address</h3>
+          <p><strong>Murutani Building, Biashara Street</strong></p>
+          <p>Kiambu Town, Kiambu County, Kenya</p>
+          <p>P.O. Box 1378 – 00900 Kiambu</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Phone &amp; WhatsApp</h3>
+          <a href="https://wa.me/254751827542" target="_blank" rel="noopener">WhatsApp: +254 751 827 542 (0751 827 542)</a>
+          <a href="tel:+254751827542">Call Line 1: +254 751 827 542</a>
+          <a href="tel:+254736299090">Call Line 2: +254 736 299 090</a>
+        </div>
+
+        <div class="contact-card">
+          <h3>Email &amp; Hours</h3>
+          <a href="mailto:jayrincompany@gmail.com">jayrincompany@gmail.com</a>
+          <p>Monday – Saturday: 8:00 AM – 6:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h4>JAYRIN &amp; CO LIMITED</h4>
+        <p>Paints &amp; Gypsum Center | Vibrant Color, Structured Quality, Perfect Spaces.</p>
+      </div>
+      <div>
+        <p>Murutani Building, Biashara Street, Kiambu Town</p>
+        <p>Mon – Sat: 8:00 AM – 6:00 PM | WhatsApp: +254 751 827 542</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Jayrin &amp; Co Limited. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/254751827542?text=Hello%20Jayrin%20%26%20Co%20Limited%2C%20I%20need%20assistance%20with%20paints%20or%20gypsum." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    WhatsApp Us: 0751 827 542
+  </a>
+
+  <script>
+    function calculateEstimate() {
+      const type = document.getElementById("projectType").value;
+      const area = Math.max(1, parseFloat(document.getElementById("areaSize").value) || 0);
+      const brand = document.getElementById("preferredBrand").value;
+
+      const paintLitres = Math.ceil((area / 10) * 2);
+      const undercoatLitres = Math.ceil(area / 10);
+      const gypsumBoards = Math.ceil(area / 2.88);
+
+      let htmlSummary = "";
+      let plainSummary = "";
+
+      if (type === "paint") {
+        htmlSummary = `For <strong>${area} m&sup2;</strong> (2 coats): approx. <strong>${paintLitres} Litres</strong> of <strong>${brand}</strong> topcoat + <strong>${undercoatLitres} Litres</strong> undercoat.`;
+        plainSummary = `Project: Painting (${area} sqm) | Brand: ${brand} | Est: ${paintLitres}L topcoat + ${undercoatLitres}L undercoat.`;
+      } else if (type === "gypsum") {
+        htmlSummary = `For <strong>${area} m&sup2;</strong> ceiling: approx. <strong>${gypsumBoards} Gypsum Boards</strong> (2.4m x 1.2m) plus framing channels, studs &amp; jointing compound.`;
+        plainSummary = `Project: Gypsum Ceiling (${area} sqm) | Est: ${gypsumBoards} Gypsum Boards + framing & accessories.`;
+      } else {
+        htmlSummary = `For <strong>${area} m&sup2;</strong> full package: approx. <strong>${gypsumBoards} Gypsum Boards</strong> + <strong>${paintLitres} Litres</strong> of <strong>${brand}</strong> paint &amp; <strong>${undercoatLitres} Litres</strong> undercoat.`;
+        plainSummary = `Project: Gypsum + Painting (${area} sqm) | Brand: ${brand} | Est: ${gypsumBoards} Gypsum Boards + ${paintLitres}L paint.`;
+      }
+
+      document.getElementById("estimateOutput").innerHTML = htmlSummary;
+      const msg = encodeURIComponent(`Hello Jayrin & Co Limited, please send me a quote for: ${plainSummary}`);
+      document.getElementById("whatsappQuoteBtn").href = `https://wa.me/254751827542?text=${msg}`;
+    }
+
+    calculateEstimate();
+  </script>
+</body>
+</html>
